@@ -29,18 +29,30 @@ const nunjucksConfig = {
 
   app.set('view engine', 'html')
 
+  app.use("/images",express.static(path.join(__dirname, "images")))
+
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('home')
   });
 
-  app.get('/employees', (req, res) => {
+  app.get('/employeeAdmin', (req, res) => {
     
       con.query("SELECT * FROM employee", function (err, result, fields) {
         if (err) throw err;
         res.render("view-employees", {employees: result})
        
   });
+
+})
+
+  app.get('/employees', (req, res) => {
+    
+    con.query("SELECT * FROM employee", function (err, result, fields) {
+      if (err) throw err;
+      res.render("employee-dashboard", {employees: result})
+     
+});
 
 })
   
