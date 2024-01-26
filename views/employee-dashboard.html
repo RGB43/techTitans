@@ -1,0 +1,22 @@
+{% extends "index.html" %} {% block content %}
+<h1>View Employees</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Role</th>
+    <th>Employee Number</th>
+  </tr>
+
+  {% for employee in employees %}
+  <tr>
+    <td>{{employee.name}}</td>
+    <td>{{employee.address}}</td>
+    <td>{{employee.role}}</td>
+    <td>{{employee.employee_number}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% endblock %}
