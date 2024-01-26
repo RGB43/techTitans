@@ -33,7 +33,7 @@ const nunjucksConfig = {
 
 
 app.get('/', (req, res) => {
-    res.render('index')
+    res.render('home')
   });
 
   app.get('/employeeAdmin', (req, res) => {
